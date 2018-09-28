@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import BossListContainer from "./containers/BossListContainer"
 
 class App extends Component {
   constructor() {
@@ -10,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        Client
+        <BossListContainer />
       </div>
     );
   }

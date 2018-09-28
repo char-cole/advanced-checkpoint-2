@@ -1,11 +1,14 @@
 import {combineReducers} from "redux";
 
-function someThing(state = "") { 
+function bosses(state = [], action) { 
+  if (action.type === "BOSSES_LOADED"){
+    return action.value;
+  }
   return state;
 }
 
-
 const rootReducer = combineReducers({
-  someThing
+  bosses
 });
+
 export default rootReducer;
