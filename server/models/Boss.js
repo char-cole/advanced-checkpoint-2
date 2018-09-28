@@ -23,7 +23,7 @@ const schema = new mongoose.Schema({
     },
     weakness: {
         required: true,
-        type: String
+        type: Array
     },
     echoes: {
         required: true,
