@@ -20,8 +20,8 @@ class CreateBoss extends React.Component {
           <p><em>Making contact with eldritch wisdom is a blessing, for even if it drives one mad, it allows one to serve a grander purpose, for posterity.</em></p>
           <form onSubmit={(e) => {
             e.preventDefault();
-            if (this.props.CreateBoss) {
-              this.props.CreateBoss(this.state.boss);
+            if (this.props.createBoss) {
+              this.props.createBoss(this.state.boss);
             }
           }}>
             <div>
@@ -48,7 +48,7 @@ class CreateBoss extends React.Component {
                   boss: Object.assign(this.state.boss,boss)
                 });
               }}>
-                <option value="other">other</option>
+                <option value="unspecific"></option>
                 <option value="beast">beast</option>
                 <option value="kin">kin</option>
               </select>

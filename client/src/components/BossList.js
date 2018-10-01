@@ -7,11 +7,11 @@ const BossList = (props) => {
         return (
             <div>
                 <h3>{boss.name}</h3>
-                <ul>
-                    <li>{boss.location}</li>
-                    <li>{boss.health} HP | {boss.echoes} blood echoes</li>
+                <ul style={{listStyle:"none"}}>
+                    <li>Found in {boss.location}</li>
+                    <li>Formed of {boss.body} flesh</li>
                 </ul>
-                <button>Delete</button>
+                <button onClick={props.removeBoss(boss._id)}>Delete</button>
             </div>
         )
     });

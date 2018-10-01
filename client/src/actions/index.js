@@ -27,5 +27,14 @@ export function createBoss(boss) {
         body: JSON.stringify(boss)
       }).then(() => dispatch(loadBosses()));
     };
+}
+
+export function removeBoss(bossId){
+  return function (dispatch) {
+    fetch("/bosses", {
+      method: "DELETE",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(bossId)
+    }).then(() => dispatch(loadBosses()));
   }
-   
+}

@@ -22,14 +22,14 @@ module.exports.create = function create(req, res, next) {
     });
 }
 
-// module.exports.delete = function remove(req, res, next) {
-//     BossModel.findByIdAndRemove(req.params.id).exec()
-//     .then(boss => {
-//       return res.json(boss);
-//     });
-// }
+module.exports.remove = function remove(req, res, next) {
+    BossModel.findByIdAndRemove(req.params.id).exec()
+    .then(boss => {
+      return res.json(boss);
+    });
+}
 
-// module.exports.put = function edit(req, res, next) {
+// module.exports.edit = function edit(req, res, next) {
 //     BossModel.findByIdAndUpdate(req.params.id).exec()
 //     .then(boss => {
 //       return res.json(boss);
