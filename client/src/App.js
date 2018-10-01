@@ -12,7 +12,6 @@ class App extends Component {
   constructor() {
     super();
     this.state = {bosses: []};
-
   }
   componentDidMount() {
     this.props.loadBosses();
@@ -20,9 +19,13 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
-        <BossListContainer />
-        <CreateBossContainer />
+      <div style={{padding: "10px 30px"}}>
+          <div style={{float: "left", width: "49%"}}>
+            <BossListContainer />
+          </div>
+          <div style={{float: "left", width: "49%"}}>
+            <CreateBossContainer />
+          </div>
       </div>
     );
   }

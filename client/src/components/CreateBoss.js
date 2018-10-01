@@ -7,13 +7,7 @@ class CreateBoss extends React.Component {
       boss: {
         name: "",
         location: "",
-        health: 0,
-        beast: false,
-        kin: false,
-        weakness: [],
-        echoes: 0,
-        drops: "",
-        gates: []
+        body: ""
       }
     };
   }
@@ -21,7 +15,9 @@ class CreateBoss extends React.Component {
     return (
       <div>
         <div>
-          <h1>Boss</h1>
+          <h1>Have you witnessed a boss not listed?</h1>
+          <h2>Share your insight, and add them to the list</h2>
+          <p><em>Making contact with eldritch wisdom is a blessing, for even if it drives one mad, it allows one to serve a grander purpose, for posterity.</em></p>
           <form onSubmit={(e) => {
             e.preventDefault();
             if (this.props.CreateBoss) {
@@ -45,38 +41,19 @@ class CreateBoss extends React.Component {
               }} />
             </div>
             <div>
-              Health: <input type="number" onChange={(e) => {
-                const boss = {health: e.target.value};
+              What manner of creature?: 
+              <select onChange={(e) => {
+                const boss = {body: e.target.value};
                 this.setState({
                   boss: Object.assign(this.state.boss,boss)
                 });
-              }} />
+              }}>
+                <option value="other">other</option>
+                <option value="beast">beast</option>
+                <option value="kin">kin</option>
+              </select>
             </div>
-            <div>
-              Beast?: <input type="checkbox" onChange={(e) => {
-                const check = {beast: e.target.value};
-                this.setState({
-                  boss: Object.assign(this.state.boss,check)
-                });
-              }} />
-            </div>
-            <div>
-              Kin?: <input type="checkbox" onChange={(e) => {
-                const check = {kin: e.target.value};
-                this.setState({
-                  boss: Object.assign(this.state.boss,check)
-                });
-              }} />
-            </div>
-            <div>
-              Blood Echoes: <input type="number" onChange={(e) => {
-                const boss = {echoes: e.target.value};
-                this.setState({
-                  boss: Object.assign(this.state.boss,boss)
-                });
-              }} />
-            </div>
-            <button type="submit">Create</button> 
+            <button type="submit">Add Boss</button> 
           </form>
         </div>       
       </div>  

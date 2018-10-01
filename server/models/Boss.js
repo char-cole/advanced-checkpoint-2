@@ -10,30 +10,27 @@ const schema = new mongoose.Schema({
         type: String
     },
     health: {
-        required: true,
+        required: false,
         type: Number
     },
-    beast: {
-        required: true,
-        type: Boolean
-    },
-    kin: {
-        required: true,
-        type: Boolean
-    },
-    weakness: {
-        required: true,
-        type: Array
-    },
-    echoes: {
-        required: true,
-        type: Number
-    },
-    drops: {
+    body: {
         required: true,
         type: String
     },
+    weakness: {
+        required: false,
+        type: Array
+    },
+    echoes: {
+        required: false,
+        type: Number
+    },
+    drops: {
+        required: false,
+        type: String
+    },
     gates: {
+        required: false,
         type: Array
     }
 });
