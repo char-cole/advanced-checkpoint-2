@@ -2,6 +2,7 @@ import React from "react";
 
 const BossList = (props) => {
     let bosses = props.bosses;
+    
     let bossDivs = bosses.map(boss => {
         return (
             <div>
@@ -10,6 +11,7 @@ const BossList = (props) => {
                     <li>{boss.location}</li>
                     <li>{boss.health} HP | {boss.echoes} blood echoes</li>
                 </ul>
+                <button>Delete</button>
             </div>
         )
     });

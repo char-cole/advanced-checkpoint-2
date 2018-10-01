@@ -18,4 +18,14 @@ export function bossesLoaded(bosses) {
         value: bosses
     };
 }
+
+export function createBoss(boss) {
+    return function (dispatch) {
+      fetch("/bosses", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(boss)
+      }).then(() => dispatch(loadBosses()));
+    };
+  }
    

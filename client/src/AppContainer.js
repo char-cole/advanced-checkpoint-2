@@ -6,8 +6,7 @@ import { loadBosses } from "./actions";
 function mapDispatchToProps(dispatch) {
   return {
     loadBosses:function(){
-      let action = loadBosses();
-      dispatch(action);
+      dispatch(loadBosses());
     }
   };
 }

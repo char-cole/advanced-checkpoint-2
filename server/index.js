@@ -1,24 +1,13 @@
 let express = require("express")
-let mongoose = require("mongoose")
 let bodyParser = require("body-parser")
 let bossRoutes = require("./routes/Boss")
-const app = express();
 
+let mongoose = require("mongoose")
 mongoose.set("debug", true);
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://admin:strongpass1@ds117423.mlab.com:17423/checkpoint-2")
 
-
-// .then(
-//   () => { 
-//     console.log("mongoose connected successfully");
-   
-//     startWebServer();
-//   },
-//   err => {
-//     console.log("mongoose did not connect",err);
-//    }
-// );
+const app = express();
 
 app.use(bodyParser.json());
 app.use(bossRoutes);
