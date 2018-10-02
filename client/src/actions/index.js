@@ -38,3 +38,24 @@ export function removeBoss(bossId){
     }).then(() => dispatch(loadBosses()));
   }
 }
+
+export function lookupBoss(boss) {
+  return function (dispatch) {
+    dispatch({
+      type: "BOSS_LOADING"
+    });
+    fetch("/bosses/" + boss._id,)
+    .then( (response) => {
+      return response.json();
+    }).then((boss) => {
+      dispatch(bossLoaded(boss));
+    });
+  }
+}
+
+export function bossLoaded(boss) {
+  return {
+      type: "BOSS_LOADED",
+      value: boss
+  };
+}

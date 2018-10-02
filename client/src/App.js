@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
-import BossListContainer from "./containers/BossListContainer";
-import CreateBossContainer from "./containers/CreateBossContainer";
+import Main from "./components/Main"
+import BossContainer from "./containers/BossContainer"
+
 import {
   BrowserRouter,
   Route,
@@ -15,18 +16,18 @@ class App extends Component {
   }
   componentDidMount() {
     this.props.loadBosses();
-
+    this.props.loadboss();
   }
   render() {
     return (
-      <div style={{padding: "10px 30px"}}>
-          <div style={{float: "left", width: "49%"}}>
-            <BossListContainer />
-          </div>
-          <div style={{float: "left", width: "49%"}}>
-            <CreateBossContainer />
-          </div>
-      </div>
+      <BrowserRouter>
+        <div style={{padding: "10px 30px"}}>
+          <Switch>
+            <Route path="/bosses/:bossId" component={BossContainer}/>
+            <Route path="/" component={Main}/>
+          </Switch>
+        </div>
+      </BrowserRouter>
     );
   }
 }

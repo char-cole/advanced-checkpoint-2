@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const BossList = (props) => {
     let bosses = props.bosses;
@@ -11,7 +12,10 @@ const BossList = (props) => {
                     <li>Found in {boss.location}</li>
                     <li>Formed of {boss.body} flesh</li>
                 </ul>
-                <button onClick={props.removeBoss(boss._id)}>Delete</button>
+                <Link to={"/bosses/" + boss._id}> <i className="fa fa-fw fa-user" />
+                  Examine boss 
+                </Link>
+                <button >Delete</button>
             </div>
         )
     });

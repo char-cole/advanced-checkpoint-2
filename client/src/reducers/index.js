@@ -13,8 +13,15 @@ function bosses(state=[], action){
   return state;
 }
 
+function boss(state={}, action){
+  if (action.type === "BOSS_LOADED"){
+    return action.value;
+  }
+  return state;
+}
+
 const rootReducer = combineReducers({
-  bosses
+  bosses, boss
 });
 
 export default rootReducer;
