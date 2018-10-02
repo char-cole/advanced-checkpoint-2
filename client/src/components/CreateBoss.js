@@ -48,7 +48,7 @@ class CreateBoss extends React.Component {
                   boss: Object.assign(this.state.boss,boss)
                 });
               }}>
-                <option value="unspecific"></option>
+                <option value="unspecific">unspecific</option>
                 <option value="beast">beast</option>
                 <option value="kin">kin</option>
               </select>
